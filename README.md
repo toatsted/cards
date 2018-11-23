@@ -1,15 +1,27 @@
 # Cards
 
 ### Game
-  - Array `this.players`
+  - Function `init()`
+    - Array `this.players`
 
-### Player (game)
-  - Game `this.game = game`
-  - Array `this.hand`
+### Card
+  - Function `init(val, suit)`
+    - String `this.suit = suit`
+    - String `this.val = val`
 
-### Deck (game)
-  - Game `this.game = game`
-  - Array `this.cards`
+### Player
+  - Function `init(game, name)`
+    - Game `this.game = game`
+    - String `this.name = name`
+    - Array `this.hand`
+    - add `this` to `game.players`
+
+### Deck
+  - Function `init(game, name)`
+    - Game `this.game = game`
+    - Array `this.cards`
+    - `this.create()`
+    - `this.shuffle()`
   - Function `shuffle()`
     - for random number between 3-5
       - [Fisher-Yates](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) shuffle `this.cards`
@@ -17,7 +29,7 @@
     - For each `suit/val`
       - `card = New Card(suit, val)`
       - push card into `this.cards`
-
-### Card (val, suit)
-  - String `this.suit = suit`
-  - String `this.val = val`
+  - Function `deal()`
+    - for each `player` in `this.game.players`
+      - `card` = remove last element in `this.cards`
+      - add `card` to `player.hand`
