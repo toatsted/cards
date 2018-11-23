@@ -1,23 +1,29 @@
 # Cards
 
 ### Game
-  - Function `init()`
+  - `init()`
     - Array `this.players`
 
+### Blackjack `extends Game`
+  - `init()`
+    - `super()` 
+    - `new Player(this, "Dealer")`
+    - `new Player(this, "Player")`
+
 ### Card
-  - Function `init(val, suit)`
+  - `init(val, suit)`
     - String `this.suit = suit`
     - String `this.val = val`
 
 ### Player
-  - Function `init(game, name)`
+  - `init(game, name)`
     - Game `this.game = game`
     - String `this.name = name`
     - Array `this.hand`
     - add `this` to `game.players`
 
 ### Deck
-  - Function `init(game, name)`
+  - `init(game)`
     - Game `this.game = game`
     - Array `this.cards`
     - `this.create()`
