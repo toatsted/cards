@@ -1,6 +1,6 @@
 module.exports = class Card {
-  constructor(val, suit) {
+  constructor(suit, num) {
     this.suit = suit;
-    this.val = val;
+    this.num = num;
   }
 }
